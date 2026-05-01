@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Adaptive icon foreground: "AR" monogram with glassmorphic rounded panel.
+
+    Canvas  : 108 × 108 dp  (Android adaptive icon standard)
+    Safe zone: 18 dp inset each side → drawing inside 20–88 dp range
+
+    BUILD FIX: <path> elements using <aapt:attr name="android:fillColor"> must NOT
+    also carry android:fillColor="..." as an XML attribute on the same tag.
+    Having both causes "Cannot find attribute fillColor" in the resource merger.
+    Solution: remove the XML attribute; let the aapt:attr child be the sole source.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- ── Outer glow halo (violet, very soft) ──────────────────────────── -->
+    <path
+        android:pathData="
+            M84,16 Q92,16 92,24 L92,84 Q92,92 84,92
+            L24,92 Q16,92 16,84 L16,24 Q16,16 24,16 Z"
+        android:fillColor="#1A0A3A"
+        android:fillAlpha="0.6" />
+
+    <!-- ── Glass panel: dark navy fill ──────────────────────────────────── -->
+    <path
+        android:pathData="
+            M82,20 Q88,20 88,26 L88,82 Q88,88 82,88
+            L26,88 Q20,88 20,82 L20,26 Q20,20 26,20 Z"
+        android:fillColor="#12122A" />
+
+    <!-- ── Glass border glow: subtle white stroke ────────────────────────── -->
+    <path
+        android:pathData="
+            M82,21.5 Q86.5,21.5 86.5,26 L86.5,82 Q86.5,86.5 82,86.5
+            L26,86.5 Q21.5,86.5 21.5,82 L21.5,26 Q21.5,21.5 26,21.5 Z"
+        android:fillColor="#00000000"
+        android:strokeColor="#55FFFFFF"
+        android:strokeWidth="1.0" />
+
+    <!--
+        ── "A" letter — violet → cyan gradient (left side) ─────────────────
+        Geometric modern "A":
+          · Peak at (45, 29)
+          · Left leg bottom-left  (29, 77)
+          · Right leg bottom      (57, 77)  — right leg merges into "R" stem
+          · Inner crossbar gap at y=56–62
+          · All strokes ~7 dp thick
+    -->
+    <path
+        android:pathData="
+            M45,29 L28,77 L35,77 L45,50 L55,77 L62,77 L45,29 Z
+            M33.5,63 L41,63 L38.5,57 L31,57 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="28"
+                android:startY="29"
+                android:endX="62"
+                android:endY="77">
+                <item android:offset="0.0" android:color="#FF7C5CFF" />
+                <item android:offset="1.0" android:color="#FF4B8FFF" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!--
+        ── "R" letter — mid-blue → cyan gradient (right side) ──────────────
+        Geometric modern "R":
+          · Vertical stem  x=54–61, full height y=29–77
+          · Bowl (semi-circle bump): x=61–79, y=29–53
+          · Diagonal leg:  from (75,53) down to (79,77)
+          · Counter (negative space of bowl) filled with panel colour
+    -->
+    <path
+        android:pathData="
+            M54,29 L54,77 L61,77 L61,55 L70,55 L77,77 L79,77
+            L72,53 Q82,48 82,40 Q82,29 69,29 Z
+            M61,35 L68,35 Q76,35 76,41 Q76,48 68,48 L61,48 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="54"
+                android:startY="29"
+                android:endX="82"
+                android:endY="77">
+                <item android:offset="0.0" android:color="#FF4B8FFF" />
+                <item android:offset="1.0" android:color="#FF00D4FF" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+</vector>

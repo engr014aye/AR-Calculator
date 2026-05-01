@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">AR Calculator</string>
+    <string name="calculator">Calculator</string>
+    <string name="converter">Converter</string>
+    <string name="history">History</string>
+    <string name="standard">Standard</string>
+    <string name="scientific">Scientific</string>
+    <string name="length">Length</string>
+    <string name="weight">Weight</string>
+    <string name="currency">Currency</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="result">Result</string>
+    <string name="clear_all">Clear All</string>
+    <string name="clear_history_confirm">Clear all calculation history?</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="no_history">No calculations yet.\nStart calculating!</string>
+    <string name="label_hint">Add a label…</string>
+    <string name="error_invalid">Invalid expression</string>
+    <string name="error_divide_zero">Cannot divide by zero</string>
+    <string name="error_math">Math Error</string>
+</resources>
